@@ -6,8 +6,8 @@ Created on Thu Nov  9 06:22:54 2023
 @author: frasier
 """
 import random
-#word = "apple"
-#list_of_guesses = []
+word_list = ["apple", "banana", "cherry", "date", "grapefruit", "clementine", "orange", "fig", "olive", "persimmon"]
+
 
 class Hangman:
     
@@ -33,9 +33,11 @@ class Hangman:
 
 
     def play_game(self, word_list):
-        #self.num_lives = 5
-        #game = Hangman(word_list, self.num_lives)
-        #game(word_list, self.num_lives)
+        '''
+        This function governs whether the entire game starts, has been won, or has been lost. It makes use
+        of a while True loop which is only broken when one of these conditions have been met. A player loses
+        when they have exhausted all their lives, and wins when they have no more letters left to guess.
+        '''
         while True:
             if self.num_lives == 0:
                 print("You lost!")
