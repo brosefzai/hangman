@@ -33,10 +33,16 @@ class Hangman:
     def check_guess(self, guess):
         guess = guess.lower()
         if guess in self.word:
+            #self.num_lives -= 1
             print(f"Good guess! {guess} is in the word.")
             for letter in self.word:
                 if letter == guess:
                     self.word_guessed[(self.word.index(letter))] = guess
-        self.num_lives -= 1
+        else:
+            self.num_lives -= 1
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")
+            
+        #self.num_lives -= 1
             
     
